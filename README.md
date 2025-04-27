@@ -8,6 +8,15 @@ The Magento 2 Offers module allows you to manage offer banners assigned to one o
 
 ## Installation
 
+To install this module via Composer, execute the following commands:
+
+```sh
+composer require dnd/module-offers-banner
+bin/magento module:enable Dnd_OffersBanner
+bin/magento setup:upgrade
+bin/magento setup:di:compile
+```
+
 For information about a module installation in Magento 2, see [Manage third-party extensions](https://experienceleague.adobe.com/en/docs/commerce-operations/installation-guide/tutorials/extensions).
 
 

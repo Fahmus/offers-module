@@ -16,7 +16,7 @@ class Config
     /**
      * Path to the configuration setting that enables the offers banner.
      */
-    const CONFIG_PATH_ENABLED = 'catalog/offers_banner/enabled';
+    private const CONFIG_PATH_ENABLED = 'catalog/offers_banner/enabled';
 
     /**
      * Config constructor.

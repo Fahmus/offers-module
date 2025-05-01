@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    bootstrap="../../../bootstrap.php"
+    colors="true"
+    verbose="true"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    stopOnError="false"
+    stopOnFailure="false"
+    stopOnIncomplete="false">
+    <testsuites>
+        <testsuite name="Dnd_OffersBanner Unit Test Suite">
+            <directory>./Test/Unit/</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

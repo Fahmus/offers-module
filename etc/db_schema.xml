@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="offers_banner" resource="default" engine="innodb" comment="Dnd Offers banner Table">
+        <column name="id" xsi:type="int" nullable="false" identity="true" comment="Offer ID"/>
+        <column name="label" xsi:type="varchar" nullable="false" length="255" comment="Label"/>
+        <column name="image" xsi:type="varchar" nullable="false" length="255" comment="Image"/>
+        <column name="link" xsi:type="varchar" nullable="false" length="255" comment="Redirect Link"/>
+        <column name="categories" xsi:type="text" nullable="false" comment="Categories"/>
+        <column name="start_date" xsi:type="datetime" nullable="false" comment="Start Date"/>
+        <column name="end_date" xsi:type="datetime" nullable="false" comment="End Date"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>

@@ -19,4 +19,12 @@
             <argument name="collectionProcessor" xsi:type="object">Dnd\OffersBanner\Virtual\Model\Api\SearchCriteria\OffersCollectionProcessor</argument>
         </arguments>
     </type>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="offersbanner_listing_data_source" xsi:type="string">Dnd\OffersBanner\Model\ResourceModel\OffersBanner\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
 </config>

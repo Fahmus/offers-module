@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">offersbanner_listing.offersbanner_listing_data_source</item>
+        </item>
+        <item name="buttons" xsi:type="array">
+            <item name="create" xsi:type="array">
+                <item name="name" xsi:type="string">create</item>
+                <item name="label" xsi:type="string" translate="true">Create Offer</item>
+                <item name="class" xsi:type="string">primary</item>
+                <item name="url" xsi:type="string">*/*/create</item>
+            </item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>offersbanner_columns</spinner>
+        <deps>
+            <dep>offersbanner_listing.offersbanner_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="offersbanner_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <aclResource>Dnd_OffersBanner::offers_banner</aclResource>
+        <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="offersbanner_listing_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <settings>
+            <sticky>true</sticky>
+        </settings>
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <filters name="listing_filters">
+            <argument name="data" xsi:type="array">
+                <item name="observers" xsi:type="array">
+                    <item name="column" xsi:type="string">column</item>
+                </item>
+            </argument>
+            <settings>
+                <templates>
+                    <filters>
+                        <select>
+                            <param name="template" xsi:type="string">ui/grid/filters/elements/ui-select</param>
+                            <param name="component" xsi:type="string">Magento_Ui/js/form/element/ui-select</param>
+                        </select>
+                    </filters>
+                </templates>
+            </settings>
+        </filters>
+        <paging name="listing_paging" />
+    </listingToolbar>
+    <columns name="offersbanner_columns">
+        <column name="id" sortOrder="10">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Offer ID</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="label" sortOrder="20">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Label</label>
+            </settings>
+        </column>
+        <column name="image" sortOrder="30">
+            <settings>
+                <label translate="true">Image</label>
+            </settings>
+        </column>
+        <column name="link" sortOrder="40">
+            <settings>
+                <label translate="true">Link</label>
+            </settings>
+        </column>
+        <column name="categories" sortOrder="50" class="Dnd\OffersBanner\Ui\Component\Listing\Column\Category">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Categories</item>
+                    <item name="dataType" xsi:type="string">select</item>
+                </item>
+            </argument>
+        </column>
+        <column name="start_date" sortOrder="60" class="Magento\Ui\Component\Listing\Columns\Date"
+                component="Magento_Ui/js/grid/columns/date">
+            <settings>
+                <filter>dateRange</filter>
+                <dataType>date</dataType>
+                <dateFormat>dd/MM/YYYY</dateFormat>
+                <label translate="true">Start Date</label>
+            </settings>
+        </column>
+        <column name="end_date" sortOrder="70" class="Magento\Ui\Component\Listing\Columns\Date"
+                component="Magento_Ui/js/grid/columns/date">
+            <settings>
+                <filter>dateRange</filter>
+                <dataType>date</dataType>
+                <dateFormat>dd/MM/YYYY</dateFormat>
+                <label translate="true">End Date</label>
+            </settings>
+        </column>
+    </columns>
+</listing>

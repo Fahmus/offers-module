@@ -2,24 +2,24 @@
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">offersbanner_listing.offersbanner_listing_data_source</item>
+            <item name="provider" xsi:type="string">offersbanner_index_index.offersbanner_index_index_data_source</item>
         </item>
         <item name="buttons" xsi:type="array">
             <item name="create" xsi:type="array">
                 <item name="name" xsi:type="string">create</item>
                 <item name="label" xsi:type="string" translate="true">Create Offer</item>
                 <item name="class" xsi:type="string">primary</item>
-                <item name="url" xsi:type="string">*/*/create</item>
+                <item name="url" xsi:type="string">*/*/edit</item>
             </item>
         </item>
     </argument>
     <settings>
         <spinner>offersbanner_columns</spinner>
         <deps>
-            <dep>offersbanner_listing.offersbanner_listing_data_source</dep>
+            <dep>offersbanner_index_index.offersbanner_index_index_data_source</dep>
         </deps>
     </settings>
-    <dataSource name="offersbanner_listing_data_source" component="Magento_Ui/js/grid/provider">
+    <dataSource name="offersbanner_index_index_data_source" component="Magento_Ui/js/grid/provider">
         <settings>
             <storageConfig>
                 <param name="indexField" xsi:type="string">id</param>
@@ -27,7 +27,7 @@
             <updateUrl path="mui/index/render"/>
         </settings>
         <aclResource>Dnd_OffersBanner::offers_banner</aclResource>
-        <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="offersbanner_listing_data_source">
+        <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="offersbanner_index_index_data_source">
             <settings>
                 <requestFieldName>id</requestFieldName>
                 <primaryFieldName>id</primaryFieldName>
@@ -73,9 +73,12 @@
                 <label translate="true">Label</label>
             </settings>
         </column>
-        <column name="image" sortOrder="30">
+        <column name="image" sortOrder="30" component="Magento_Ui/js/grid/columns/thumbnail"
+                class="Dnd\OffersBanner\Ui\Component\Listing\Column\Thumbnail">
             <settings>
-                <label translate="true">Image</label>
+                <hasPreview>1</hasPreview>
+                <label translate="true">Thumbnail</label>
+                <sortable>false</sortable>
             </settings>
         </column>
         <column name="link" sortOrder="40">
@@ -109,5 +112,14 @@
                 <label translate="true">End Date</label>
             </settings>
         </column>
+        <!-- Action columns -->
+        <actionsColumn name="actions" sortOrder="80" class="Dnd\OffersBanner\Ui\Component\Listing\Column\OffersBannerActions">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="resizeEnabled" xsi:type="boolean">false</item>
+                    <item name="indexField" xsi:type="string">id</item>
+                </item>
+            </argument>
+        </actionsColumn>
     </columns>
 </listing>

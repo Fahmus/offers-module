@@ -49,7 +49,7 @@ class Collection extends OffersBannerCollection implements SearchResultInterface
     /**
      * @inheritdoc
      */
-    public function setItems(array $items = null)
+    public function setItems(array $items = null): Collection
     {
         return $this;
     }
@@ -57,7 +57,7 @@ class Collection extends OffersBannerCollection implements SearchResultInterface
     /**
      * @inheritdoc
      */
-    public function getAggregations()
+    public function getAggregations(): AggregationInterface
     {
         return $this->aggregations;
     }
@@ -65,7 +65,7 @@ class Collection extends OffersBannerCollection implements SearchResultInterface
     /**
      * @inheritdoc
      */
-    public function setAggregations($aggregations)
+    public function setAggregations($aggregations): Collection
     {
         $this->aggregations = $aggregations;
         return $this;
@@ -74,7 +74,7 @@ class Collection extends OffersBannerCollection implements SearchResultInterface
     /**
      * @inheritdoc
      */
-    public function getSearchCriteria()
+    public function getSearchCriteria(): ?SearchCriteriaInterface
     {
         return null;
     }
@@ -82,7 +82,7 @@ class Collection extends OffersBannerCollection implements SearchResultInterface
     /**
      * @inheritdoc
      */
-    public function setSearchCriteria(SearchCriteriaInterface $searchCriteria)
+    public function setSearchCriteria(SearchCriteriaInterface $searchCriteria): Collection
     {
         return $this;
     }
@@ -90,7 +90,7 @@ class Collection extends OffersBannerCollection implements SearchResultInterface
     /**
      * @inheritdoc
      */
-    public function getTotalCount()
+    public function getTotalCount(): int
     {
         return $this->getSize();
     }
@@ -98,16 +98,8 @@ class Collection extends OffersBannerCollection implements SearchResultInterface
     /**
      * @inheritdoc
      */
-    public function setTotalCount($totalCount)
+    public function setTotalCount($totalCount): Collection
     {
         return $this;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getSelect()
-    {
-        return parent::getSelect();
     }
 }

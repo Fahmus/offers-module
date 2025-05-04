@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace Dnd\OffersBanner\Model\ResourceModel;
 
+use Dnd\OffersBanner\Api\Data\OffersBannerInterface;
+use Magento\Framework\Model\AbstractModel;
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
 /**
@@ -13,7 +15,7 @@ class OffersBanner extends AbstractDb
     /**
      * @inheritdoc
      */
-    protected $_idFieldName = 'id';
+    protected $_idFieldName = OffersBannerInterface::ID;
 
     /**
      * @inheritDoc

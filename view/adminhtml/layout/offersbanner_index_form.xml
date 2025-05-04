@@ -3,7 +3,7 @@
     <update handle="styles"/>
     <body>
         <referenceContainer name="content">
-            <uiComponent name="offersbanner_index_index" />
+            <uiComponent name="offersbanner_index_edit" />
         </referenceContainer>
     </body>
 </page>

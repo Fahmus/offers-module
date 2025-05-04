@@ -36,9 +36,9 @@ interface OffersBannerInterface
     /**
      * Get Image
      *
-     * @return string
+     * @return string|null
      */
-    public function getImage(): string;
+    public function getImage(): ?string;
 
     /**
      * Set Image

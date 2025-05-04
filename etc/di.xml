@@ -23,7 +23,7 @@
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
-                <item name="offersbanner_listing_data_source" xsi:type="string">Dnd\OffersBanner\Model\ResourceModel\OffersBanner\Grid\Collection</item>
+                <item name="offersbanner_index_index_data_source" xsi:type="string">Dnd\OffersBanner\Model\ResourceModel\OffersBanner\Grid\Collection</item>
             </argument>
         </arguments>
     </type>

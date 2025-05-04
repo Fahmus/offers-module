@@ -41,7 +41,7 @@ class OffersBanner extends AbstractModel implements OffersBannerInterface
     /**
      * @inheritDoc
      */
-    public function getImage(): string
+    public function getImage(): ?string
     {
         return (string) $this->getData(OffersBannerInterface::IMAGE);
     }

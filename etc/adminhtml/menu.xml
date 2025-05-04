@@ -7,6 +7,7 @@
              sortOrder="30"
              parent="Magento_CatalogRule::promo"
              resource="Dnd_OffersBanner::offers_banner"
-             action="offersbanner/index/index"/>
+             action="offersbanner/index/index"
+             dependsOnConfig="catalog/offers_banner/enabled"/>
     </menu>
 </config>

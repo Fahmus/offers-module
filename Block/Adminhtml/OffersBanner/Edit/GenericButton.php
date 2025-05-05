@@ -13,6 +13,9 @@ class GenericButton
 {
     protected UrlInterface $urlBuilder;
 
+    /**
+     * @param Context $context
+     */
     public function __construct(
         protected Context $context
     ) {
@@ -20,7 +23,7 @@ class GenericButton
     }
 
     /**
-     * Returns ID
+     * Returns the request ID.
      *
      * @return int|null
      */
@@ -30,7 +33,7 @@ class GenericButton
     }
 
     /**
-     * Generate url by route and parameters
+     * Generate url by route and parameters.
      *
      * @param string $route
      * @param array  $params

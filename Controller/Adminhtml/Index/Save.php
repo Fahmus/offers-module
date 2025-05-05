@@ -20,6 +20,12 @@ class Save extends Action implements HttpPostActionInterface
 {
     public const ADMIN_RESOURCE = 'Dnd_OffersBanner::offers_banner_edit';
 
+    /**
+     * @param Context $context
+     * @param OffersBannerFactory $offersBannerFactory
+     * @param OffersBannerResourceModel $offersBannerResourceModel
+     * @param ImageUploader $imageUploader
+     */
     public function __construct(
         Context $context,
         private readonly OffersBannerFactory $offersBannerFactory,

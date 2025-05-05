@@ -22,9 +22,17 @@ use Dnd\OffersBanner\Model\ResourceModel\OffersBanner\Collection as OffersBanner
  */
 class Collection extends OffersBannerCollection implements SearchResultInterface
 {
-    /** @var AggregationInterface */
     private AggregationInterface $aggregations;
 
+    /**
+     * @param EntityFactoryInterface $entityFactory
+     * @param LoggerInterface $logger
+     * @param FetchStrategyInterface $fetchStrategy
+     * @param ManagerInterface $eventManager
+     * @param $model
+     * @param AdapterInterface|null $connection
+     * @param AbstractDb|null $resource
+     */
     public function __construct(
         EntityFactoryInterface $entityFactory,
         LoggerInterface $logger,

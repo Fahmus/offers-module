@@ -22,6 +22,12 @@ class Upload extends Action
 {
     public const ADMIN_RESOURCE = 'Dnd_OffersBanner::offers_banner_edit';
 
+    /**
+     * @param Context $context
+     * @param UploaderFactory $uploaderFactory
+     * @param Filesystem $filesystem
+     * @param JsonFactory $resultJsonFactory
+     */
     public function __construct(
         Context $context,
         private readonly UploaderFactory $uploaderFactory,

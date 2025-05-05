@@ -34,10 +34,8 @@ class Category extends Column
     }
 
     /**
-     * Prepare data for the category column
+     * @inheritDoc
      *
-     * @param array $dataSource
-     * @return array
      * @throws NoSuchEntityException
      */
     public function prepareDataSource(array $dataSource): array

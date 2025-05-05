@@ -17,6 +17,10 @@ class Delete extends BackendAction implements HttpGetActionInterface
 {
     public const ADMIN_RESOURCE = 'Dnd_OffersBanner::offers_banner_delete';
 
+    /**
+     * @param Context $context
+     * @param OffersBannerRepositoryInterface $offersBannerRepository
+     */
     public function __construct(
         Context $context,
         private readonly OffersBannerRepositoryInterface $offersBannerRepository,

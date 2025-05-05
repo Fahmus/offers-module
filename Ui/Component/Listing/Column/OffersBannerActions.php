@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Dnd\OffersBanner\Ui\Component\Listing\Column;
 
 use Dnd\OffersBanner\Api\Data\OffersBannerInterface;
+use Dnd\OffersBanner\Model\Constants;
 use Magento\Framework\UrlInterface;
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
@@ -14,8 +15,13 @@ use Magento\Ui\Component\Listing\Columns\Column;
  */
 class OffersBannerActions extends Column
 {
-    public const EDIT_LINK = 'offersbanner/index/edit';
-
+    /**
+     * @param UrlInterface $urlBuilder
+     * @param ContextInterface $context
+     * @param UiComponentFactory $uiComponentFactory
+     * @param array $components
+     * @param array $data
+     */
     public function __construct(
         protected UrlInterface $urlBuilder,
         ContextInterface $context,
@@ -27,10 +33,7 @@ class OffersBannerActions extends Column
     }
 
     /**
-     * Prepare Data Source
-     *
-     * @param array $dataSource
-     * @return array
+     * @inheritDoc
      */
     public function prepareDataSource(array $dataSource): array
     {
@@ -38,7 +41,7 @@ class OffersBannerActions extends Column
             foreach ($dataSource['data']['items'] as &$item) {
                 $item[$this->getData('name')]['edit'] = [
                     'href' => $this->urlBuilder->getUrl(
-                        self::EDIT_LINK,
+                        Constants::OFFERS_BANNER_BO_EDIT_URL,
                         ['id' => $item[OffersBannerInterface::ID]]
                     ),
                     'label' => __('Edit'),

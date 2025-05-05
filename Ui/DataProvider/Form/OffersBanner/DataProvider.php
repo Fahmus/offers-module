@@ -13,30 +13,25 @@ use Magento\Ui\DataProvider\AbstractDataProvider;
  */
 class DataProvider extends AbstractDataProvider
 {
-    /**
-     * @var array $loadedData
-     */
     protected array $loadedData;
 
     /**
-     * Offers banner data provider constructor.
-     *
-     * @param $name
-     * @param $primaryFieldName
-     * @param $requestFieldName
      * @param CollectionFactory $collectionFactory
      * @param DataPersistorInterface $dataPersistor
      * @param ImageUploader $imageUploader
+     * @param string $name
+     * @param string $primaryFieldName
+     * @param string $requestFieldName
      * @param array $meta
      * @param array $data
      */
     public function __construct(
-        $name,
-        $primaryFieldName,
-        $requestFieldName,
         CollectionFactory $collectionFactory,
         protected DataPersistorInterface $dataPersistor,
         private readonly ImageUploader $imageUploader,
+        $name,
+        $primaryFieldName,
+        $requestFieldName,
         array $meta = [],
         array $data = []
     ) {

@@ -1,0 +1,48 @@
+& when (@media-common = true) {
+    .offers-banner-wrapper {
+        position: relative;
+        margin: 20px 0;
+
+        .swiper-container {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .swiper-slide {
+            text-align: center;
+
+            img {
+                max-width: 100%;
+                height: auto;
+                display: inline-block;
+            }
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            color: #000;
+        }
+
+        .swiper-button-next {
+            right: 10px;
+        }
+
+        .swiper-button-prev {
+            left: 10px;
+        }
+
+        .swiper-pagination {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            bottom: 10px;
+            z-index: 10;
+        }
+    }
+}

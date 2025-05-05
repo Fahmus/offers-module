@@ -11,9 +11,7 @@ use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 class BackButton extends GenericButton implements ButtonProviderInterface
 {
     /**
-     * Get ButtonData
-     *
-     * @return array
+     * @inheritDoc
      */
     public function getButtonData(): array
     {
@@ -26,7 +24,7 @@ class BackButton extends GenericButton implements ButtonProviderInterface
     }
 
     /**
-     * Get BackUrl
+     * Get back Url.
      *
      * @return string
      */

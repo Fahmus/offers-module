@@ -19,19 +19,6 @@ use Magento\Framework\Exception\NoSuchEntityException;
  */
 class Thumbnail  extends Column
 {
-    const URL_PATH_EDIT = 'offersbanner/index/edit';
-
-    /**
-     *
-     * @var StoreManagerInterface
-     */
-    protected StoreManagerInterface $storeManagerInterface;
-
-    /**
-     * @var UrlInterface
-     */
-    protected UrlInterface $url;
-
     /**
      * @param ContextInterface $context
      * @param UiComponentFactory $uiComponentFactory
@@ -43,20 +30,17 @@ class Thumbnail  extends Column
     public function __construct(
         ContextInterface $context,
         UiComponentFactory $uiComponentFactory,
-        StoreManagerInterface $storeManagerInterface,
-        UrlInterface $url,
+        protected StoreManagerInterface $storeManagerInterface,
+        protected UrlInterface $url,
         array $components = [],
         array $data = []
-    )
-    {
+    ) {
         parent::__construct($context, $uiComponentFactory, $components, $data);
-        $this->storeManagerInterface = $storeManagerInterface;
-        $this->url = $url;
     }
 
     /**
-     * @param array $dataSource
-     * @return array
+     * @inheritDoc
+     *
      * @throws NoSuchEntityException
      */
     public function prepareDataSource(array $dataSource): array
@@ -69,7 +53,7 @@ class Thumbnail  extends Column
                 $item['image_src'] = $imageUrl;
                 $item['image_alt'] = '';
                 $item['image_link'] = $this->url->getUrl(
-                    self::URL_PATH_EDIT,
+                    Constants::OFFERS_BANNER_BO_EDIT_URL,
                     ['id' => $item['id']]
                 );
                 $item['image_orig_src'] = $imageUrl;

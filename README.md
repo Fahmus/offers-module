@@ -182,3 +182,7 @@ vendor/bin/phpunit -c $(pwd)/dev/tests/unit/phpunit.xml app/code/Dnd/OffersBanne
 ```bash
 vendor/bin/phpunit -c $(pwd)/dev/tests/integration/phpunit.xml app/code/Dnd/OffersBanner/Test/Integration/
 ```
+
+---
+
+![screenshot](example.png)

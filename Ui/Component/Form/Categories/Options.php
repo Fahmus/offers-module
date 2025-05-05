@@ -15,14 +15,9 @@ use Magento\Framework\Exception\LocalizedException;
 class Options implements OptionSourceInterface
 {
     protected ?array $categoriesTree = null;
-    /**
-     * Excluded category IDs
-     */
     public const EXCLUDED_CATEGORIES = [CategoryModel::TREE_ROOT_ID, 2];
 
     /**
-     * Categories options constructor.
-     *
      * @param CategoryCollectionFactory $categoryCollectionFactory
      * @param RequestInterface $request
      */

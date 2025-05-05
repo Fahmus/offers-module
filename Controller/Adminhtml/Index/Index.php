@@ -17,6 +17,10 @@ class Index extends BackendAction implements HttpGetActionInterface
 {
     const ADMIN_RESOURCE = 'Dnd_OffersBanner::offers_banner_list';
 
+    /**
+     * @param Context $context
+     * @param PageFactory $pageResultFactory
+     */
     public function __construct(
         Context $context,
         private readonly PageFactory $pageResultFactory

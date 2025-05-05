@@ -1,0 +1,11 @@
+<?php
+/**
+ * @var \Dnd\OffersBanner\Block\Category\Container $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+
+<div class="offers-banner-wrapper">
+    <div class="swiper-container offers-banner-slider"
+         data-mage-init='{"offersBannerAjaxLoader": {"url": "<?= $escaper->escapeUrl($block->getAjaxUrl()) ?>", "categoryId": <?= (int) $block->getCategoryId() ?>}}'></div>
+</div>

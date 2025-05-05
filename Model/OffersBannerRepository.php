@@ -25,8 +25,6 @@ use Magento\Framework\Exception\NoSuchEntityException;
 class OffersBannerRepository implements OffersBannerRepositoryInterface
 {
     /**
-     * OffersBannerRepository constructor.
-     *
      * @param OffersBannerResourceModel $offersBannerResourceModel
      * @param OffersBannerModelFactory $offersBannerModelFactory
      * @param OffersBannerCollectionFactory $offersBannerCollectionFactory

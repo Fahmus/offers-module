@@ -14,13 +14,6 @@ use Magento\Store\Model\ScopeInterface;
 class Config
 {
     /**
-     * Path to the configuration setting that enables the offers banner.
-     */
-    private const CONFIG_PATH_ENABLED = 'catalog/offers_banner/enabled';
-
-    /**
-     * Config constructor.
-     *
      * @param ScopeConfigInterface $scopeConfig
      */
     public function __construct(
@@ -37,6 +30,6 @@ class Config
      */
     public function isEnabled(string $scopeType = ScopeInterface::SCOPE_STORE, ?string $scopeCode = null): bool
     {
-        return $this->scopeConfig->isSetFlag(self::CONFIG_PATH_ENABLED, $scopeType, $scopeCode);
+        return $this->scopeConfig->isSetFlag(Constants::CONFIG_PATH_ENABLED, $scopeType, $scopeCode);
     }
 }

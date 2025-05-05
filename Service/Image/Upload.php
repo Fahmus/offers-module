@@ -7,6 +7,7 @@ use Dnd\OffersBanner\Model\Constants;
 use Dnd\OffersBanner\Model\OffersBanner as OffersBannerModel;
 use Magento\Framework\App\Filesystem\DirectoryList;
 use Magento\Framework\Exception\FileSystemException;
+use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Filesystem;
 use Magento\Framework\Filesystem\Directory\ReadInterface;
 use Magento\Framework\Filesystem\Driver\File\Mime;
@@ -22,8 +23,6 @@ class Upload
     protected ReadInterface $mediaDirectory;
 
     /**
-     * Image uploader constructor.
-     *
      * @param Filesystem $filesystem
      * @param StoreManagerInterface $storeManager
      * @param Mime $mime
@@ -68,6 +67,8 @@ class Upload
      * @param int $offerId
      * @param string $imageName
      * @return array
+     * @throws NoSuchEntityException
+     * @throws FileSystemException
      */
     public function retrieveImageData(int $offerId, string $imageName): array
     {

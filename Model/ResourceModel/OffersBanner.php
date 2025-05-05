@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace Dnd\OffersBanner\Model\ResourceModel;
 
 use Dnd\OffersBanner\Api\Data\OffersBannerInterface;
-use Magento\Framework\Model\AbstractModel;
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
 /**

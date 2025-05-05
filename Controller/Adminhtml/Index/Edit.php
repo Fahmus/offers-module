@@ -21,6 +21,13 @@ class Edit extends BackendAction implements HttpGetActionInterface
 {
     public const ADMIN_RESOURCE = 'Dnd_OffersBanner::offers_banner_edit';
 
+    /**
+     * @param Context $context
+     * @param PageFactory $resultPageFactory
+     * @param Registry $coreRegistry
+     * @param OffersBannerFactory $offersBannerFactory
+     * @param OffersBannerRepositoryInterface $offersBannerRepository
+     */
     public function __construct(
         Context $context,
         private readonly PageFactory $resultPageFactory,

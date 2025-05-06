@@ -1,5 +1,5 @@
 {
-    "name": "dnd/module-offers-banner",
+    "name": "dnd/offers-module",
     "description": "Magento 2 Offers Banner Module",
     "require": {
         "php": "^8.1 || ^8.2 || ^8.3"

@@ -37,6 +37,12 @@ Extension developers can interact with the Dnd_OffersBanner module. For more inf
 
 [The Magento dependency injection mechanism](https://developer.adobe.com/commerce/php/development/build/dependency-injection-file/) enables you to override the functionality of the Dnd_OffersBanner module.
 
+## Compatibility
+
+This module is compatible with the **Luma** theme in Magento 2.  
+It follows Magento’s layout, block, and styling conventions to integrate smoothly with the front end.  
+Specific CSS adjustments are provided in the `_module.less` file to ensure proper visual rendering.
+
 ## Performance Optimization
 
 To ensure optimal frontend performance, the module implements several strategies:

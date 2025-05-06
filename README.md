@@ -37,10 +37,49 @@ Extension developers can interact with the Dnd_OffersBanner module. For more inf
 
 [The Magento dependency injection mechanism](https://developer.adobe.com/commerce/php/development/build/dependency-injection-file/) enables you to override the functionality of the Dnd_OffersBanner module.
 
+## Performance Optimization
+
+To ensure optimal frontend performance, the module implements several strategies:
+
+### Caching of Offers
+
+- Offers are cached per category using Magento's cache system.
+- Each cache entry is scoped by category ID to ensure targeted invalidation.
+- Cache TTL is calculated dynamically:
+    - Based on the soonest upcoming `start_date` or `end_date` among the active offers.
+    - Falls back to a configurable default (e.g., 600 seconds) if no offers exist.
+
+This ensures offers are not shown after expiration and avoids unnecessary database queries.
+
+### Asynchronous Loading
+
+- Offers are loaded via AJAX on category pages to bypass Full Page Cache (FPC) and ensure freshness.
+- This allows the block to be updated without requiring full-page cache invalidation.
+
+### Styles and Scripts
+
+- All CSS is scoped and placed in `_module.less` to avoid global style pollution.
+- JS components are loaded via `requirejs-config.js` and initialized efficiently using `data-mage-init`.
+
+### Custom TTL Configuration
+
+You can customize the default cache TTL in the Magento Admin panel under:
+
+``Stores > Configuration > Catalog > Catalog > Offers banner > Cache TTL (seconds)``
+
+This value will be used when no offers are currently active.
 
 ## Running Unit and Integration Tests
 
+This module includes a basic test setup to demonstrate how to write tests for Magento 2 modules:
+
+- **2 Unit Tests**
+- **1 Integration Test**
+
+These tests serve as examples and starting points for extending full test coverage.
+
 ### 1. Prerequisites
+
 To run unit and integration tests for the Dnd_OffersBanner module, ensure you have the following:
 
 - Magento 2 environment set up (with dependencies installed).

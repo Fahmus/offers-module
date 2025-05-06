@@ -51,9 +51,12 @@ class Save extends Action implements HttpPostActionInterface
         $id = $this->getRequest()->getParam('id');
         /** @var OffersBannerModel $offersBannerModel */
         $offersBannerModel = $this->offersBannerFactory->create();
+        $oldCategories = [];
+        $newCategories = $data['categories'];
 
         if ($id) {
             $this->offersBannerResourceModel->load($offersBannerModel, $id);
+            $oldCategories = explode(',', $offersBannerModel->getCategories());
         }
 
         $imageData = $data['image'][0] ?? null;
@@ -66,6 +69,7 @@ class Save extends Action implements HttpPostActionInterface
 
         try {
             $this->offersBannerResourceModel->save($offersBannerModel);
+            $this->_eventManager->dispatch('offers_banner_save_after', ['categories' => array_unique(array_merge($oldCategories, $newCategories))]);
             $this->imageUploader->processImageCopy($offersBannerModel, $newImage, $oldImage);
             $this->messageManager->addSuccessMessage(__('Offer saved successfully.'));
 

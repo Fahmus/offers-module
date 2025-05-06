@@ -30,6 +30,19 @@ class Config
      */
     public function isEnabled(string $scopeType = ScopeInterface::SCOPE_STORE, ?string $scopeCode = null): bool
     {
-        return $this->scopeConfig->isSetFlag(Constants::CONFIG_PATH_ENABLED, $scopeType, $scopeCode);
+        return $this->scopeConfig->isSetFlag(Constants::OFFERS_BANNER_CONFIG_PATH_ENABLED, $scopeType, $scopeCode);
+    }
+
+    /**
+     * Get the default TTL in seconds.
+     *
+     * @param string $scopeType The scope type (default is store scope).
+     * @param string|null $scopeCode The scope code (optional).
+     * @return int the default TTL in seconds.
+     */
+    public function getTtl(string $scopeType = ScopeInterface::SCOPE_STORE, ?string $scopeCode = null): int
+    {
+        $value = $this->scopeConfig->getValue(Constants::OFFERS_BANNER_CONFIG_PATH_TTL, $scopeType, $scopeCode);
+        return ($value !== null) ? (int) $value : Constants::OFFERS_BANNER_DEFAULT_CACHE_TTL;
     }
 }

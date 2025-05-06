@@ -16,6 +16,7 @@ use PHPUnit\Framework\TestCase;
 class ConfigTest extends TestCase
 {
     private const CONFIG_PATH_ENABLED = 'catalog/offers_banner/enabled';
+    private const CONFIG_PATH_TTL = 'catalog/offers_banner/ttl';
     private readonly Config $config;
     private readonly ScopeConfigInterface|MockObject $scopeConfigMock;
 
@@ -66,5 +67,33 @@ class ConfigTest extends TestCase
             ->willReturn(true);
 
         $this->assertTrue($this->config->isEnabled('website', 'base'));
+    }
+
+    /**
+     * Test getTtl().
+     *
+     * @return void
+     */
+    public function testGetTtl(): void
+    {
+        $this->scopeConfigMock->method('getValue')
+            ->with(self::CONFIG_PATH_TTL)
+            ->willReturn(600);
+
+        $this->assertEquals(600, $this->config->getTtl());
+    }
+
+    /**
+     * Test getTtl() with custom scope type and code.
+     *
+     * @return void
+     */
+    public function testGetTtlWithCustomScope(): void
+    {
+        $this->scopeConfigMock->method('getValue')
+            ->with(self::CONFIG_PATH_TTL, 'website', 'base')
+            ->willReturn(600);
+
+        $this->assertEquals(600, $this->config->getTtl('website', 'base'));
     }
 }

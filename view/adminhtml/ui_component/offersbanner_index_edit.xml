@@ -130,7 +130,7 @@
                     <item name="dataType" xsi:type="string">string</item>
                     <item name="required" xsi:type="boolean">true</item>
                     <item name="options" xsi:type="array">
-                        <item name="dateFormat" xsi:type="string">dd-MM-yyyy</item>
+                        <item name="dateFormat" xsi:type="string">yyyy-MM-dd</item>
                         <item name="timeFormat" xsi:type="string">HH:mm:ss</item>
                         <item name="showsTime" xsi:type="boolean">true</item>
                     </item>
@@ -148,7 +148,7 @@
                     <item name="dataType" xsi:type="string">string</item>
                     <item name="required" xsi:type="boolean">true</item>
                     <item name="options" xsi:type="array">
-                        <item name="dateFormat" xsi:type="string">dd-MM-yyyy</item>
+                        <item name="dateFormat" xsi:type="string">yyyy-MM-dd</item>
                         <item name="timeFormat" xsi:type="string">HH:mm:ss</item>
                         <item name="showsTime" xsi:type="boolean">true</item>
                     </item>

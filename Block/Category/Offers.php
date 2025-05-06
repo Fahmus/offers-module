@@ -29,9 +29,10 @@ class Offers extends Template
     }
 
     /**
-     * Get offers list.
+     * Get list offers.
      *
-     * @return OffersBannerInterface[]
+     * @return array
+     * @throws NoSuchEntityException
      */
     public function getOffersBannerList(): array
     {

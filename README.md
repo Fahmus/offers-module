@@ -24,8 +24,8 @@ For information about a module installation in Magento 2, see [Manage third-part
 
 At Stores > Configuration > Catalog > Catalog > Offers banner:
 
-* **Enabled**
-
+* **Enabled**: Enable or disable the offers banner module
+* **Default TTL (seconds)**: Time to cache offers when no expiration is defined (in seconds).
 
 ## Manage Offers
 

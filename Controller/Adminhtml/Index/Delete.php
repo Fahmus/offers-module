@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Dnd\OffersBanner\Controller\Adminhtml\Index;
 
+use Dnd\OffersBanner\Api\Data\OffersBannerInterface;
 use Dnd\OffersBanner\Api\OffersBannerRepositoryInterface;
 use Exception;
 use Magento\Backend\App\Action as BackendAction;
@@ -37,19 +38,22 @@ class Delete extends BackendAction implements HttpGetActionInterface
         $resultRedirect = $this->resultRedirectFactory->create();
         if ($offerId) {
             try {
-                $this->offersBannerRepository->deleteById((int) $offerId);
+                $offer = $this->offersBannerRepository->getById($offerId);
+                $categories = explode(',', $offer->getCategories());
+
+                $this->offersBannerRepository->delete($offer);
+                $this->_eventManager->dispatch('offers_banner_save_after', ['categories' => $categories]);
                 $this->messageManager->addSuccessMessage(
                     __('Offer deleted successfully.')
                 );
                 return $resultRedirect->setPath('*/*/');
             } catch (Exception $e) {
                 $this->messageManager->addErrorMessage($e->getMessage());
+
                 return $resultRedirect->setPath('*/*/edit', ['id' => $offerId]);
             }
         }
-        $this->messageManager->addErrorMessage(
-            __('Offer not found.')
-        );
+        $this->messageManager->addErrorMessage(__('Offer with ID: "%1" not found.', $offerId));
 
         return $resultRedirect->setPath('*/*/');
     }

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="offers_banner_save_after">
+        <observer name="dnd_offers_banner_invalidate_cache" instance="Dnd\OffersBanner\Observer\InvalidateOffersBannerCache" />
+    </event>
+</config>

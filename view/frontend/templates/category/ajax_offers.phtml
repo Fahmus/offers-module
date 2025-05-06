@@ -8,9 +8,9 @@
     <div class="swiper-wrapper">
         <?php foreach ($block->getOffersBannerList() as $offer): ?>
             <div class="swiper-slide">
-                <a href="<?= $escaper->escapeUrl($offer->getLink()) ?>">
-                    <img src="<?= $escaper->escapeUrl($block->getImageUrl($offer)) ?>"
-                         alt="<?= $escaper->escapeHtml($offer->getLabel()) ?>" />
+                <a href="<?= $escaper->escapeUrl($offer['link']) ?>">
+                    <img src="<?= $escaper->escapeUrl($offer['image']) ?>"
+                         alt="<?= $escaper->escapeHtml($offer['label']) ?>" />
                 </a>
             </div>
         <?php endforeach; ?>

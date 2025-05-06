@@ -8,6 +8,12 @@
                 <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Enabled</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <tooltip>Enable or disable the offers banner module.</tooltip>
+                </field>
+                <field id="ttl" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Default TTL (seconds)</label>
+                    <validate>validate-digits</validate>
+                    <tooltip>Time to cache offers when no expiration is defined (in seconds).</tooltip>
                 </field>
             </group>
         </section>

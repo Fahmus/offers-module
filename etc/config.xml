@@ -5,6 +5,7 @@
         <catalog>
             <offers_banner>
                 <enabled>1</enabled>
+                <ttl>600</ttl>
             </offers_banner>
         </catalog>
     </default>

@@ -47,11 +47,11 @@ class Upload
     public function processImageCopy(OffersBannerModel $newModel, string $newImage, ?string $oldImage): void
     {
         $mediaDir = $this->filesystem->getDirectoryWrite(DirectoryList::MEDIA);
-        $tmpPath = Constants::BANNERS_OFFER_IMAGE_TMP_PATH . DIRECTORY_SEPARATOR . $newImage;
-        $destPath = Constants::BANNERS_OFFER_IMAGE_PATH . DIRECTORY_SEPARATOR . $newModel->getId() . DIRECTORY_SEPARATOR . $newImage;
+        $tmpPath = sprintf('%s/%s', Constants::BANNERS_OFFER_IMAGE_TMP_PATH, $newImage);
+        $destPath = sprintf('%s/%s/%s', Constants::BANNERS_OFFER_IMAGE_PATH, $newModel->getId(), $newImage);
 
         if ($mediaDir->isExist($tmpPath)) {
-            $oldImagePath = Constants::BANNERS_OFFER_IMAGE_PATH . DIRECTORY_SEPARATOR . $newModel->getId() . DIRECTORY_SEPARATOR . $oldImage;
+            $oldImagePath = sprintf('%s/%s/%s', Constants::BANNERS_OFFER_IMAGE_PATH, $newModel->getId(), $oldImage);
             if ($oldImage && $mediaDir->isExist($oldImagePath)) {
                 $mediaDir->delete($oldImagePath);
             }
@@ -73,8 +73,16 @@ class Upload
     public function retrieveImageData(int $offerId, string $imageName): array
     {
         $baseUrl = $this->storeManager->getStore()->getBaseUrl(UrlInterface::URL_TYPE_MEDIA);
-        $imageData['fullPath'] = $this->mediaDirectory->getAbsolutePath(Constants::BANNERS_OFFER_IMAGE_PATH). DIRECTORY_SEPARATOR . $offerId . DIRECTORY_SEPARATOR . $imageName;
-        $imageData['imageUrl'] = $baseUrl . Constants::BANNERS_OFFER_IMAGE_PATH. DIRECTORY_SEPARATOR . $offerId . DIRECTORY_SEPARATOR . $imageName;
+        $imageData['fullPath'] = sprintf('%s/%s/%s',
+            $this->mediaDirectory->getAbsolutePath(Constants::BANNERS_OFFER_IMAGE_PATH),
+            $offerId,
+            $imageName
+        );
+        $imageData['imageUrl'] = sprintf('%s/%s/%s',
+            $baseUrl . Constants::BANNERS_OFFER_IMAGE_PATH,
+            $offerId,
+            $imageName
+        );
         $imageData['stat'] = $this->mediaDirectory->stat($imageData['fullPath']);
         $imageData['type'] = $this->mime->getMimeType($imageData['fullPath']);
 

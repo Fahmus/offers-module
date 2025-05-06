@@ -49,7 +49,7 @@ class Thumbnail  extends Column
             if (isset($item['image'])) {
                 $baseUrl = $this->storeManagerInterface->getStore()->getBaseUrl(UrlInterface::URL_TYPE_MEDIA);
 
-                $imageUrl = $baseUrl . Constants::BANNERS_OFFER_IMAGE_PATH. DIRECTORY_SEPARATOR . $item['id'] . DIRECTORY_SEPARATOR . $item['image'];
+                $imageUrl = sprintf('%s/%s/%s', $baseUrl . Constants::BANNERS_OFFER_IMAGE_PATH, $item['id'], $item['image']);
                 $item['image_src'] = $imageUrl;
                 $item['image_alt'] = '';
                 $item['image_link'] = $this->url->getUrl(

@@ -8,7 +8,7 @@
                     <resource id="Magento_CatalogRule::promo">
                         <resource id="Dnd_OffersBanner::offers_banner" title="Offers banner" sortOrder="30">
                             <resource id="Dnd_OffersBanner::offers_banner_list" title="Offers list" sortOrder="10"/>
-                            <resource id="Dnd_OffersBanner::offers_banner_edit" title="Edit Offer" sortOrder="20"/>
+                            <resource id="Dnd_OffersBanner::offers_banner_edit" title="Create or Edit Offer" sortOrder="20"/>
                             <resource id="Dnd_OffersBanner::offers_banner_delete" title="Delete Offer" sortOrder="30"/>
                         </resource>
                     </resource>

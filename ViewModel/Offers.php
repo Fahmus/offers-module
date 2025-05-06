@@ -66,6 +66,7 @@ class Offers implements ArgumentInterface
     public function getImageUrl(OffersBanner $offer): string
     {
         $baseUrl = $this->storeManager->getStore()->getBaseUrl(UrlInterface::URL_TYPE_MEDIA);
-        return $baseUrl . Constants::BANNERS_OFFER_IMAGE_PATH. DIRECTORY_SEPARATOR . $offer->getId() . DIRECTORY_SEPARATOR . $offer->getImage();
+
+        return sprintf('%s/%s/%s', $baseUrl . Constants::BANNERS_OFFER_IMAGE_PATH, $offer->getId(), $offer->getImage());
     }
 }

@@ -7,9 +7,6 @@ use Dnd\OffersBanner\Model\Constants;
 use Magento\Catalog\Model\Layer\Resolver as LayerResolver;
 use Magento\Framework\View\Element\Template;
 
-/**
- * Class Container
- */
 class Container extends Template
 {
     /**

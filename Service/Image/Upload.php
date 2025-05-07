@@ -73,12 +73,14 @@ class Upload
     public function retrieveImageData(int $offerId, string $imageName): array
     {
         $baseUrl = $this->storeManager->getStore()->getBaseUrl(UrlInterface::URL_TYPE_MEDIA);
-        $imageData['fullPath'] = sprintf('%s/%s/%s',
+        $imageData['fullPath'] = sprintf(
+            '%s/%s/%s',
             $this->mediaDirectory->getAbsolutePath(Constants::BANNERS_OFFER_IMAGE_PATH),
             $offerId,
             $imageName
         );
-        $imageData['imageUrl'] = sprintf('%s/%s/%s',
+        $imageData['imageUrl'] = sprintf(
+            '%s/%s/%s',
             $baseUrl . Constants::BANNERS_OFFER_IMAGE_PATH,
             $offerId,
             $imageName

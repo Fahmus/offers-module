@@ -13,9 +13,6 @@ use Magento\Backend\App\Action\Context;
 use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\Controller\Result\Redirect;
 
-/**
- * Class Save
- */
 class Save extends Action implements HttpPostActionInterface
 {
     public const ADMIN_RESOURCE = 'Dnd_OffersBanner::offers_banner_edit';

@@ -17,7 +17,7 @@ use Magento\Framework\Exception\NoSuchEntityException;
  *
  * Custom column for displaying thumbnails.
  */
-class Thumbnail  extends Column
+class Thumbnail extends Column
 {
     /**
      * @param ContextInterface $context

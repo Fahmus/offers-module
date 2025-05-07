@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 namespace Dnd\OffersBanner\Controller\Offers;
+
 use Dnd\OffersBanner\Block\Category\Offers as CategoryOffers;
 use Dnd\OffersBanner\Model\Config;
 use Magento\Framework\App\ActionInterface;

@@ -8,9 +8,6 @@ use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 use Magento\Framework\App\CacheInterface;
 
-/**
- * Class InvalidateOffersBannerCache
- */
 class InvalidateOffersBannerCache implements ObserverInterface
 {
     /**

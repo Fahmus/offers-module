@@ -11,9 +11,6 @@ use Magento\Backend\App\Action\Context;
 use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\Controller\Result\Redirect;
 
-/**
- * Class Delete
- */
 class Delete extends BackendAction implements HttpGetActionInterface
 {
     public const ADMIN_RESOURCE = 'Dnd_OffersBanner::offers_banner_delete';

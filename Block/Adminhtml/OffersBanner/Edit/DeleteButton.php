@@ -5,9 +5,6 @@ namespace Dnd\OffersBanner\Block\Adminhtml\OffersBanner\Edit;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
-/**
- * Class DeleteButton
- */
 class DeleteButton extends GenericButton implements ButtonProviderInterface
 {
     /**
@@ -21,8 +18,8 @@ class DeleteButton extends GenericButton implements ButtonProviderInterface
                 'label' => __('Delete'),
                 'class' => 'delete',
                 'on_click' => 'deleteConfirm(\'' . __(
-                        'Are you sure you want to delete this offer?'
-                    ) . '\', \'' . $this->getDeleteUrl() . '\')',
+                    'Are you sure you want to delete this offer?'
+                ) . '\', \'' . $this->getDeleteUrl() . '\')',
                 'sort_order' => 20,
             ];
         }

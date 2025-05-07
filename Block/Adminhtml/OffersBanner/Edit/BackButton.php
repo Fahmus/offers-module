@@ -5,9 +5,6 @@ namespace Dnd\OffersBanner\Block\Adminhtml\OffersBanner\Edit;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
-/**
- * Class BackButton
- */
 class BackButton extends GenericButton implements ButtonProviderInterface
 {
     /**

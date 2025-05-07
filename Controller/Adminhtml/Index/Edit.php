@@ -14,9 +14,6 @@ use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Registry;
 use Magento\Framework\View\Result\PageFactory;
 
-/**
- * Class Edit
- */
 class Edit extends BackendAction implements HttpGetActionInterface
 {
     public const ADMIN_RESOURCE = 'Dnd_OffersBanner::offers_banner_edit';

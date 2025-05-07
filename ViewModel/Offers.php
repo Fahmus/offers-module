@@ -114,10 +114,10 @@ class Offers implements ArgumentInterface
      */
     private function getOfferSoonestTs(int $startDateTs, int $endDateTs, ?int $soonestTs, int $nowTs): ?int
     {
-        if($startDateTs && $startDateTs > $nowTs) {
+        if ($startDateTs && $startDateTs > $nowTs) {
             $soonestTs = $soonestTs ? min($soonestTs, $startDateTs) : $startDateTs;
         }
-        if($endDateTs && $endDateTs > $nowTs) {
+        if ($endDateTs && $endDateTs > $nowTs) {
             $soonestTs = $soonestTs ? min($soonestTs, $endDateTs) : $endDateTs;
         }
 

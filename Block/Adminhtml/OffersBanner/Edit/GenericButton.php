@@ -6,9 +6,6 @@ namespace Dnd\OffersBanner\Block\Adminhtml\OffersBanner\Edit;
 use Magento\Backend\Block\Widget\Context;
 use Magento\Framework\UrlInterface;
 
-/**
- * Class GenericButton
- */
 class GenericButton
 {
     protected UrlInterface $urlBuilder;

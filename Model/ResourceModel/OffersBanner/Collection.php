@@ -16,7 +16,7 @@ class Collection extends AbstractCollection
     /**
      * @inheritDoc
      */
-    protected $_idFieldName = OffersBannerInterface::ID;
+    protected string $_idFieldName = OffersBannerInterface::ID;
 
     /**
      * @inheritDoc

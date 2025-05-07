@@ -25,12 +25,17 @@ use Magento\Store\Model\StoreManagerInterface;
  */
 class Offers implements ArgumentInterface
 {
+    /**
+     * @var ReadInterface $mediaDirectory
+     */
     protected ReadInterface $mediaDirectory;
 
     /**
      * @param OffersBannerCollectionFactory $offersBannerCollectionFactory
      * @param Filesystem $filesystem
      * @param StoreManagerInterface $storeManager
+     * @param CacheInterface $cache
+     * @param JsonSerializer $jsonSerializer
      */
     public function __construct(
         private readonly OffersBannerCollectionFactory $offersBannerCollectionFactory,

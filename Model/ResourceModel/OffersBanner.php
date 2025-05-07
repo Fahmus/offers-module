@@ -14,7 +14,7 @@ class OffersBanner extends AbstractDb
     /**
      * @inheritdoc
      */
-    protected $_idFieldName = OffersBannerInterface::ID;
+    protected string $_idFieldName = OffersBannerInterface::ID;
 
     /**
      * @inheritDoc

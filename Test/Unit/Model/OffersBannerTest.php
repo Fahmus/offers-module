@@ -17,6 +17,9 @@ use ReflectionException;
  */
 class OffersBannerTest extends TestCase
 {
+    /**
+     * @var OffersBanner $offersBanner
+     */
     private readonly OffersBanner $offersBanner;
 
     /**

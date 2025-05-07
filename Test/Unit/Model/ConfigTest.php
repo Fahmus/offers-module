@@ -17,7 +17,13 @@ class ConfigTest extends TestCase
 {
     private const CONFIG_PATH_ENABLED = 'catalog/offers_banner/enabled';
     private const CONFIG_PATH_TTL = 'catalog/offers_banner/ttl';
+    /**
+     * @var Config $config
+     */
     private readonly Config $config;
+    /**
+     * @var ScopeConfigInterface|MockObject $scopeConfigMock
+     */
     private readonly ScopeConfigInterface|MockObject $scopeConfigMock;
 
     /**

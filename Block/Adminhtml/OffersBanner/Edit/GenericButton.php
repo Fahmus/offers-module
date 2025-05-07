@@ -6,8 +6,17 @@ namespace Dnd\OffersBanner\Block\Adminhtml\OffersBanner\Edit;
 use Magento\Backend\Block\Widget\Context;
 use Magento\Framework\UrlInterface;
 
+/**
+ * Class GenericButton
+ *
+ * This class provides generic button functionalities such as retrieving the request ID
+ * and generating URLs based on routes and parameters in the admin panel.
+ */
 class GenericButton
 {
+    /**
+     * @var UrlInterface $urlBuilder
+     */
     protected UrlInterface $urlBuilder;
 
     /**

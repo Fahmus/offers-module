@@ -10,13 +10,13 @@ use DateTime;
  */
 interface OffersBannerInterface
 {
-    const ID = 'id';
-    const LABEL = 'label';
-    const IMAGE = 'image';
-    const LINK = 'link';
-    const CATEGORIES = 'categories';
-    const START_DATE = 'start_date';
-    const END_DATE = 'end_date';
+    public const ID = 'id';
+    public const LABEL = 'label';
+    public const IMAGE = 'image';
+    public const LINK = 'link';
+    public const CATEGORIES = 'categories';
+    public const START_DATE = 'start_date';
+    public const END_DATE = 'end_date';
 
     /**
      * Get Label

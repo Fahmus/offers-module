@@ -22,6 +22,9 @@ use Dnd\OffersBanner\Model\ResourceModel\OffersBanner\Collection as OffersBanner
  */
 class Collection extends OffersBannerCollection implements SearchResultInterface
 {
+    /**
+     * @var AggregationInterface $aggregations
+     */
     private AggregationInterface $aggregations;
 
     /**

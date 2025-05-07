@@ -17,9 +17,9 @@ use Magento\Ui\Component\Listing\Columns\Column;
 class Category extends Column
 {
     /**
+     * @param CategoryRepositoryInterface $categoryRepository
      * @param ContextInterface $context
      * @param UiComponentFactory $uiComponentFactory
-     * @param CategoryRepositoryInterface $categoryRepository
      * @param array $components
      * @param array $data
      */

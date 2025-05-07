@@ -1,32 +1,32 @@
 & when (@media-common = true) {
     .offers-banner-wrapper {
-        position: relative;
         margin: 20px 0;
+        position: relative;
 
         .swiper-container {
-            position: relative;
-            width: 100%;
             max-width: 100%;
             overflow: hidden;
+            position: relative;
+            width: 100%;
         }
 
         .swiper-slide {
             text-align: center;
 
             img {
-                max-width: 100%;
-                height: auto;
                 display: inline-block;
+                height: auto;
+                max-width: 100%;
             }
         }
 
         .swiper-button-next,
         .swiper-button-prev {
+            color: #000;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             z-index: 10;
-            color: #000;
         }
 
         .swiper-button-next {
@@ -38,10 +38,10 @@
         }
 
         .swiper-pagination {
+            bottom: 10px;
             position: absolute;
             text-align: center;
             width: 100%;
-            bottom: 10px;
             z-index: 10;
         }
     }

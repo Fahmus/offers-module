@@ -5,6 +5,28 @@
 
 The Magento 2 Offers module allows you to manage offer banners assigned to one or more categories. It includes a back-office menu to manage offers and displays the offers on the chosen categories in the front-office based on the start and end display dates.
 
+### Features
+
+#### Backend Features
+
+- Admin can manage **Offers Banners** via a custom backend UI (grids and forms).
+- Each offer supports:
+  - Title (label)
+  - Image upload
+  - Link (URL)
+  - Start and end date
+  - Assignment to one or multiple category IDs
+
+#### Frontend Features
+
+This module uses [Swiper](https://swiperjs.com/) to create a responsive, animated banner slider on the category page.
+
+- Swiper is initialized via RequireJS (`requirejs-config.js`).
+- Styles are loaded via `_module.less` and Swiper’s own CSS.
+- Swiper pagination, navigation arrows, and autoplay features are supported.
+- The slider is rendered using a `.phtml` template and animated with JavaScript.
+
+This integration ensures a smooth and interactive experience for customers browsing category pages.
 
 ## Installation
 
